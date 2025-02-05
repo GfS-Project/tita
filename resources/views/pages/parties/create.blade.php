@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('main_content')
     <div class="erp-table-section">
         <div class="container-fluid">
@@ -43,6 +42,38 @@
                                         <input type="password" name="password" class="form-control" placeholder="********" required>
                                     </div>
                                     <div class="col-lg-6 mt-2">
+                                        <label>{{__('Country')}}</label>
+                                        <div class="blade-up-down-arrow position-relative">
+                                            <select name="country" class="select-2 form-control w-100" >
+                                                <option value="">{{__('Select a country')}}</option>
+                                                @foreach($countries  as $country)
+                                                    <option value="{{ $country['name'] }}">{{  $country['name'] }}</option>
+                                                @endforeach
+                                            </select>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Region')}}</label>
+                                        <input type="text" name="region" class="form-control" placeholder="Enter Region">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('City')}}</label>
+                                        <input type="text" name="city" class="form-control" placeholder="Enter City">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Sub City')}}</label>
+                                        <input type="text" name="sub_city" class="form-control" placeholder="Enter Sub City">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Town')}}</label>
+                                        <input type="text" name="town" class="form-control" placeholder="Enter Town">
+                                    </div>
+                                    <div class="col-lg-6 mt-2">
                                         <label>{{__('Address')}}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Enter Address">
                                     </div>
@@ -58,18 +89,7 @@
                                         <label>{{__('Opening Balance')}}</label>
                                         <input type="number" name="opening_balance" class="form-control opening_balance amount">
                                     </div>
-                                    <div class="col-lg-6 mt-2">
-                                        <label>{{__('Country')}}</label>
-                                        <div class="blade-up-down-arrow position-relative">
-                                            <select name="country" class="select-2 form-control w-100" >
-                                                <option value="">{{__('Select a country')}}</option>
-                                                @foreach($countries  as $country)
-                                                    <option value="{{ $country['name'] }}">{{  $country['name'] }}</option>
-                                                @endforeach
-                                            </select>
-                                            <span></span>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-lg-6 mt-2 receivable_type d-none">
                                         <label class="payment_title">{{ __('Payment Method') }}</label>
                                         <select name="receivable_type" class="table-select form-control w-100 receivable_type_val" required>

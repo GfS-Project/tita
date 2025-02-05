@@ -48,12 +48,48 @@
                                         <label>{{__('Confirm password')}}</label>
                                         <input type="password" name="password_confirmation" required class="form-control" placeholder="Enter Confirm password">
                                     </div>
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Country')}}</label>
+                                        <div class="blade-up-down-arrow position-relative">
+                                            <select name="country" class="select-2 form-control w-100" >
+                                                <option value="">{{__('Select a country')}}</option>
+                                                @foreach($countries  as $country)
+                                                    <option value="{{ $country['name'] }}">{{  $country['name'] }}</option>
+                                                @endforeach
+                                            </select>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Region')}}</label>
+                                        <input type="text" name="region" class="form-control" placeholder="Enter Region">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('City')}}</label>
+                                        <input type="text" name="city" class="form-control" placeholder="Enter City">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Sub City')}}</label>
+                                        <input type="text" name="sub_city" class="form-control" placeholder="Enter Sub City">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Town')}}</label>
+                                        <input type="text" name="town" class="form-control" placeholder="Enter Town">
+                                    </div>
+                                    <div class="col-lg-6 mt-2">
+                                        <label>{{__('Address')}}</label>
+                                        <input type="text" name="address" class="form-control" placeholder="Enter Address">
+                                    </div>
                                     <div class="col-lg-12">
                                         <div class="button-group text-center mt-5">
                                             <a href="" class="theme-btn border-btn m-2">{{__('Cancel')}}</a>
                                             <button class="theme-btn m-2 submit-btn">{{__('Save')}}</button>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="add-profile-photo m-5 mt-0">
                                     <label for="add-profile" class="add-profile-photo-wrapper">
