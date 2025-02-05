@@ -72,13 +72,50 @@
             </div>
         </div>
         <div class="row new-order-wrapper">
-            <div class="col-lg-4 mt-2">
+            {{-- <div class="col-lg-4 mt-2">
                 <label>{{__('GSM')}}</label>
                 <input type="text" name="gsm" class="form-control" placeholder="Enter GSM">
             </div>
             <div class="col-lg-4 mt-2">
                 <label>{{__('Yarn Count')}}</label>
                 <input type="text" name="yarn_count" class="form-control" placeholder="Enter Yarn Count">
+            </div> --}}
+            <div class="col-lg-3 mt-2">
+                <label>{{__('PP Bag Quantity')}}</label>
+                <input type="number" name="pp_bag_quantity" class="form-control" placeholder="Enter Quantity">
+            </div>
+            
+            <div class="col-lg-3 mt-2">
+                <label>{{__('PP Bag Size (Width)')}}</label>
+                <input type="text" name="pp_bag_width" class="form-control" placeholder="Enter Width">
+            </div>
+            
+            <div class="col-lg-3 mt-2">
+                <label>{{__('PP Bag Size (Length)')}}</label>
+                <input type="text" name="pp_bag_length" class="form-control" placeholder="Enter Length">
+            </div>
+            
+            <div class="col-lg-3 mt-2">
+                <label>{{__('PP Bag Weight (Gram)')}}</label>
+                <input type="number" name="pp_bag_weight" class="form-control" placeholder="Enter Weight in Gram">
+            </div>
+            
+            <div class="col-lg-4 mt-2">
+                <label>{{__('PP Bag Color')}}</label>
+                <input type="text" name="pp_bag_color" class="form-control" placeholder="Enter Color">
+            </div>
+            <div class="col-lg-4 mt-2">
+                <label>{{__('PP Bags Printing Specification')}}</label>
+                <select name="pp_bag_printing_spec" class="form-control">
+                    <option value="" >Select Printing Specification</option>
+                    <option value="single_side">Single Side Print</option>
+                    <option value="double_side">Double Side Print</option>
+                </select>
+            </div>
+            
+            <div class="col-lg-4 mt-2">
+                <label>{{__('Printing Color')}}</label>
+                <input type="text" name="pp_bag_printing_color" class="form-control" placeholder="Enter Printing Color">
             </div>
             <div class="col-lg-4 mt-2">
                 <label>{{__('Shipment Mode')}}</label>
