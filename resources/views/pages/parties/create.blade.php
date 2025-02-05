@@ -7,7 +7,7 @@
             <div class="tab-content order-summary-tab">
                 <div class="tab-pane fade show active" id="add-new-supplier">
                     <div class="table-header">
-                        <h4>{{__(request('parties-type') ? ucfirst('Add '.request('parties-type')) : 'Add Party' )}}</h4>
+                        <h4>{{__(request('parties-type') ? ucfirst('Add '.request('parties-type')) : 'Add Customer/Company' )}}</h4>
                     </div>
                     <div class="order-form-section">
                         <form action="{{ route('parties.store') }}" method="post" enctype="multipart/form-data" class="ajaxform">
@@ -16,17 +16,17 @@
                             <div class="add-suplier-modal-wrapper">
                                 <div class="row">
                                     <div class="col-lg-6 mt-2">
-                                        <label>{{__('Party Name')}}</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Enter Party Name" required>
+                                        <label>{{__('Company/Costomer Name')}}</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Enter Company/Costomer Name" required>
                                     </div>
                                     <div class="col-lg-6 mt-2">
-                                        <label>{{__('Party Email')}}</label>
-                                        <input type="text" name="email" class="form-control" placeholder="party@gmail.com">
+                                        <label>{{__('Company/Costomer Email')}}</label>
+                                        <input type="text" name="email" class="form-control" placeholder="Company/Costomer@gmail.com">
                                     </div>
                                     <div class="col-lg-6 mt-2 {{ request()->has('parties-type') ? 'd-none' : '' }}">
-                                        <label>{{__('Party Category')}}</label>
+                                        <label>{{__('Company/Costomer Category')}}</label>
                                         <div class="blade-up-down-arrow position-relative">
-                                            <select name="type" class="form-control w-100 type party-type">
+                                            <select name="type" class="form-control w-100 type Company/Costomer-type">
                                                 <option @selected(request('parties-type') == 'buyer') value="buyer">{{__('Buyer')}}</option>
                                                 <option @selected(request('parties-type') == 'supplier') value="supplier">{{__('Supplier')}}</option>
                                                 <option @selected(request('parties-type') == 'customer') value="customer">{{__('Customer')}}</option>

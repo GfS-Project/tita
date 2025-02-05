@@ -17,10 +17,10 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-6 mt-2">
-                        <label class="table-select-lebel">{{__('Party name')}}</label>
+                        <label class="table-select-lebel">{{__('Company/Customer Name')}}</label>
                         <div class="input-group">
                             <select name="party_id" required class="form-control table-select remove-bg-table-select">
-                                <option value="">{{__('Select a Party')}}</option>
+                                <option value="">{{__('Select a customer/company')}}</option>
                                 @foreach($parties as $party)
                                     <option value="{{ $party->id }}">{{ $party->name }} ({{ optional($party->user)->phone }})</option>
                                 @endforeach
@@ -49,11 +49,19 @@
                         <input type="text" name="order_no" required value="{{ $order_no ?? '' }}" class="form-control" placeholder="Enter Order No." >
                     </div>
                     <div class="col-lg-6 mt-2">
-                        <label>{{__('Order Title')}}</label>
-                        <input type="text" name="title" required class="form-control" placeholder="Enter Order Title">
+                        <label>{{ __('Order Title') }}</label>
+                        <select name="title" required class="form-control">
+                            <option value="" disabled selected>Select Order Title</option>
+                            <option value="Pp bag">Pp bag</option>
+                            <option value="Hessian Cloth">Hessian Cloth</option>
+                            <option value="Laminated">Laminated</option>
+                            <option value="Inner liner">Inner liner</option>
+                            <option value="Jumbo bag">Jumbo bag</option>
+                        </select>
                     </div>
+                    
                     <div class="col-lg-6 mt-2">
-                        <label>{{__('Order Description')}}</label>
+                        <label>{{__('Product Description')}}</label>
                         <input type="text" name="description" class="form-control" placeholder="Enter Order Description">
                     </div>
                     <div class="col-lg-6 mt-2">
@@ -78,7 +86,7 @@
             </div>
 
             <div class="col-lg-4 mt-2">
-                <label>{{__('Payment Mode')}}</label>
+                <label>{{__('Bank List')}}</label>
                 <input type="text" name="payment_mode" class="form-control" placeholder="Enter Payment Mode">
             </div>
             <div class="col-lg-4 mt-2">
@@ -112,11 +120,11 @@
                 <input type="text" name="invoice_details[consignee]" class="form-control" placeholder="Consignee & Notify">
             </div>
             <div class="col-lg-4 mt-2">
-                <label>{{__('Contact Date')}}</label>
+                <label>{{__('Date of Order')}}</label>
                 <input type="date"  name="invoice_details[contact_date]" value="{{ now()->format('Y-m-d') }}" class="form-control" placeholder="Contact Date">
             </div>
             <div class="col-lg-4 mt-2">
-                <label>{{__('Expiry Date')}}</label>
+                <label>{{__('Delivery Date')}}</label>
                 <input type="date"  name="invoice_details[expire_date]" value="{{ now()->format('Y-m-d') }}" class="form-control" placeholder="Expiry Date">
             </div>
             <div class="col-lg-4 mt-2">
@@ -124,17 +132,27 @@
                 <input type="text" name="invoice_details[negotiation]" class="form-control" placeholder="15 Days">
             </div>
             <div class="col-lg-4 mt-2">
-                <label>{{__('Port of Loading')}}</label>
-                <input type="text" name="invoice_details[loading]" class="form-control" placeholder="Port of Loading">
+                <label>{{__('Delivery place')}}</label>
+                <input type="text" name="invoice_details[loading]" class="form-control" placeholder="Delivery placeg">
             </div>
             <div class="col-lg-4 mt-2">
-                <label>{{__('Port of Discharge')}}</label>
-                <input type="text" name="invoice_details[discharge]" class="form-control" placeholder="Port of Discharge">
+                <label>{{__('Place of Destination')}}</label>
+                <input type="text" name="invoice_details[discharge]" class="form-control" placeholder="Place of Destination">
             </div>
             <div class="col-lg-4 mt-2">
-                <label>{{__('Payment Terms')}}</label>
-                <input type="text" name="invoice_details[payment_terms]" class="form-control" placeholder="Payment Terms">
+                <label>{{ __('Terms of Payment') }}</label>
+                <select name="invoice_details[payment_terms]" class="form-control" required>
+                    <option value="" disabled selected>Select Payment Terms</option>
+                    <option value="100% advance">100% advance</option>
+                    <option value="50% advance and remaining payment upon first delivery">
+                        50% advance and remaining payment upon first delivery
+                    </option>
+                    <option value="30% advance and remaining payment upon first delivery">
+                        30% advance and remaining payment upon first delivery
+                    </option>
+                </select>
             </div>
+            
             <div class="col-lg-4 mt-2">
                 <label>{{__('Remarks')}}</label>
                 <input type="text" name="invoice_details[remarks]" class="form-control" placeholder="Remarks">

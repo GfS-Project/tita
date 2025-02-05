@@ -17,7 +17,7 @@
                 <ul>
 
                     @can('orders-read')
-                    <li><a class="{{ Request::routeIs('orders.index', 'productions.create', 'order.history') ? 'active' : '' }}" href="{{ route('orders.index') }}">{{__('Order List')}}</a></li>
+                    <li><a class="{{ Request::routeIs('orders.index', 'productions.create', 'order.history') ? 'active' : '' }}" href="{{ route('orders.index') }}">{{__('Production Order List')}}</a></li>
                     @endcan
 
                     @can('bookings-read')
